@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import org.opencv.android.OpenCVLoader;
+
 public class MainActivity extends AppCompatActivity {
 
     Button callNumber;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //OpenCVLoader openCVLoader = new OpenCVLoader();
         callNumber = (Button)findViewById(R.id.callNumber);
     }
 
