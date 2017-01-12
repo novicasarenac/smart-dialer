@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,6 +46,7 @@ public class PhotoIntentActivity extends AppCompatActivity {
         File storageDir = null;
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())){
             storageDir = albumStorageDirectoryFactory.getAlbumStorageDirectory(getAlbumName());
+
             if(storageDir != null){
                 if(!storageDir.mkdirs()){
                     if(!storageDir.exists()){
@@ -64,7 +66,7 @@ public class PhotoIntentActivity extends AppCompatActivity {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
         File storageDir = getAlbumDirectory();
-        File image = File.createTempFile(imageFileName, "jpg", storageDir);
+        File image = File.createTempFile(imageFileName, ".jpg", storageDir);
 
         //save file path
         currentPhotoPath = image.getAbsolutePath();
