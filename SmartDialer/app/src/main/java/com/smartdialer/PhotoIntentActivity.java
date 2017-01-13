@@ -106,6 +106,9 @@ public class PhotoIntentActivity extends AppCompatActivity {
         if(resultCode == RESULT_OK){
             if(currentPhotoPath != null){
                 galleryAddPic();
+                Intent callActivityIntent = new Intent(this, CallActivity.class);
+                callActivityIntent.putExtra("imagePath", currentPhotoPath);
+                startActivity(callActivityIntent);
             }
         }
     }

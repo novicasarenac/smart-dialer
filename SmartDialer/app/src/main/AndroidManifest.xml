@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhotoIntentActivity"></activity>
-
+        <activity android:name=".PhotoIntentActivity" />
+        <activity android:name=".CallActivity"></activity>
     </application>
 
 </manifest>
