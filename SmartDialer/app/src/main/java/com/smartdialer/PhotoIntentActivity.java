@@ -91,4 +91,22 @@ public class PhotoIntentActivity extends AppCompatActivity {
             }
         }
     }
+
+    //make picture available to other apps
+    private void galleryAddPic(){
+        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
+        File file = new File(currentPhotoPath);
+        Uri contentUri = Uri.fromFile(file);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK){
+            if(currentPhotoPath != null){
+                galleryAddPic();
+            }
+        }
+    }
 }
