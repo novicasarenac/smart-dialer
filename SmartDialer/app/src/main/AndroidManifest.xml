@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhotoIntentActivity" />
+        <activity android:name=".PhotoIntentActivity" android:configChanges="orientation|screenSize" />
         <activity android:name=".CallActivity"></activity>
     </application>
 

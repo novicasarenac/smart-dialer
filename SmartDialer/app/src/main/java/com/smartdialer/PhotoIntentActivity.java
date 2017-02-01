@@ -1,6 +1,7 @@
 package com.smartdialer;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -30,8 +31,9 @@ public class PhotoIntentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo_intent);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
             albumStorageDirectoryFactory = new BaseAlbumDirectoryFactory();
+
 
         dispatchTakePictureIntent();
     }
