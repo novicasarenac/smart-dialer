@@ -34,7 +34,6 @@ public class PhotoIntentActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
             albumStorageDirectoryFactory = new BaseAlbumDirectoryFactory();
 
-
         dispatchTakePictureIntent();
     }
 

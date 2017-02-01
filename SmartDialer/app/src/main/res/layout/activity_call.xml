@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.smartdialer.CallActivity">
+    tools:context="com.smartdialer.CallActivity"
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -22,34 +23,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phone number"
-        android:textSize="35sp"
+        android:textSize="35dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="180dp"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textColor="@android:color/secondary_text_light"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="Cancel"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="50dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="40dp"
         android:layout_marginBottom="50dp"
         android:id="@+id/buttonCancel"
-        android:onClick="cancel"/>
+        android:onClick="cancel"
+        android:background="@android:color/holo_red_dark"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="Call"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="50dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="40dp"
         android:layout_marginBottom="50dp"
         android:id="@+id/buttonCall"
-        android:onClick="callNumber"/>
+        android:onClick="callNumber"
+        android:background="@android:color/holo_green_dark"/>
 
 </RelativeLayout>
