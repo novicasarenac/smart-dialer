@@ -33,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
         finish();
         this.finishAffinity();
     }
+
+    public void writeNumber(View view){
+        Intent writeNumberIntent = new Intent(this, WriteNumberActivity.class);
+        startActivity(writeNumberIntent);
+    }
 }

@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".PhotoIntentActivity" android:configChanges="orientation|screenSize" />
         <activity android:name=".CallActivity"></activity>
+        <activity android:name=".WriteNumberActivity" android:screenOrientation="landscape" android:configChanges="orientation|screenSize"></activity>
     </application>
 
 </manifest>

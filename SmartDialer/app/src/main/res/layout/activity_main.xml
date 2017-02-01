@@ -40,7 +40,8 @@
         android:layout_marginBottom="160dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Write Number"/>
+        android:text="Write Number"
+        android:onClick="writeNumber"/>
 
     <Button
         android:id="@+id/exit"
