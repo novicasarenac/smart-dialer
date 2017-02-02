@@ -61,7 +61,9 @@ public class PhotoIntentActivity extends AppCompatActivity {
             if(storageDir != null){
 
                 //asking permissions for creating directory
-                askPermissions();
+                if(shouldAskPermissions()) {
+                    askPermissions();
+                }
 
                 if(!storageDir.mkdirs()){
                     if(!storageDir.exists()){
@@ -143,6 +145,4 @@ public class PhotoIntentActivity extends AppCompatActivity {
         int requestCode = 200;
         requestPermissions(permissions, requestCode);
     }
-
-
 }
