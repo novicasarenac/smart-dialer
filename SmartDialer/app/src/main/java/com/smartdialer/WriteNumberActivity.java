@@ -159,7 +159,6 @@ public class WriteNumberActivity extends AppCompatActivity{
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
                 fileOutputStream.flush();
                 fileOutputStream.close();
-                String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, imgName, null);
             }catch (Exception e){
                 e.printStackTrace();
             }
