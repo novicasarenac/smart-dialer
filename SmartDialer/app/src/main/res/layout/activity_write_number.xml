@@ -17,12 +17,14 @@
             android:layout_height="wrap_content"
             android:text="Save"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:onClick="saveDrawing"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Clear"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:onClick="clearDrawing"/>
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
