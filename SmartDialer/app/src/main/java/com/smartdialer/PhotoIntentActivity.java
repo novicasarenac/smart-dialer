@@ -1,12 +1,17 @@
 package com.smartdialer;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +34,11 @@ public class PhotoIntentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (shouldAskPermissions()) {
+            askPermissions();
+        }
+
         setContentView(R.layout.activity_photo_intent);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.FROYO)
@@ -49,6 +59,10 @@ public class PhotoIntentActivity extends AppCompatActivity {
             storageDir = albumStorageDirectoryFactory.getAlbumStorageDirectory(getAlbumName());
 
             if(storageDir != null){
+
+                //asking permissions for creating directory
+                askPermissions();
+
                 if(!storageDir.mkdirs()){
                     if(!storageDir.exists()){
                         Log.d("Photos", "failed to create directory");
@@ -113,4 +127,22 @@ public class PhotoIntentActivity extends AppCompatActivity {
             }
         }
     }
+
+    //check version
+    protected boolean shouldAskPermissions() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    @TargetApi(23)
+    protected void askPermissions() {
+        String[] permissions = {
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE",
+                "android.permission.CALL_PHONE"
+        };
+        int requestCode = 200;
+        requestPermissions(permissions, requestCode);
+    }
+
+
 }
