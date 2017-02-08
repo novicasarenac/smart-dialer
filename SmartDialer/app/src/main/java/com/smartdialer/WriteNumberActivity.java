@@ -1,5 +1,6 @@
 package com.smartdialer;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -46,6 +47,11 @@ public class WriteNumberActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (shouldAskPermissions()) {
+            askPermissions();
+        }
+
         setContentView(R.layout.activity_write_number);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -77,6 +83,12 @@ public class WriteNumberActivity extends AppCompatActivity{
             storageDir = albumStorageDirectoryFactory.getAlbumStorageDirectory(getAlbumName());
 
             if(storageDir != null){
+
+                //asking permissions for creating directory
+                if(shouldAskPermissions()) {
+                    askPermissions();
+                }
+
                 if(!storageDir.mkdirs()){
                     if(!storageDir.exists()){
                         Log.d("Photos", "failed to create directory");
@@ -140,6 +152,12 @@ public class WriteNumberActivity extends AppCompatActivity{
 
         public PhoneNumberView(Context context, AttributeSet attrs) {
             super(context, attrs);
+
+            //asking permissions for creating directory
+            if(shouldAskPermissions()) {
+                askPermissions();
+            }
+
             paint.setAntiAlias(true);
             paint.setColor(Color.BLACK);
             paint.setStyle(Paint.Style.STROKE);
@@ -147,15 +165,45 @@ public class WriteNumberActivity extends AppCompatActivity{
             paint.setStrokeWidth(STROKE_WIDTH);
         }
 
+        //check version
+        protected boolean shouldAskPermissions() {
+            return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+        }
+
+        @TargetApi(23)
+        protected void askPermissions() {
+            String[] permissions = {
+                    "android.permission.READ_EXTERNAL_STORAGE",
+                    "android.permission.WRITE_EXTERNAL_STORAGE",
+                    "android.permission.CALL_PHONE"
+            };
+            int requestCode = 200;
+            requestPermissions(permissions, requestCode);
+        }
+
         public void save(View view){
+
+            //asking permissions for creating directory
+            if(shouldAskPermissions()) {
+                askPermissions();
+            }
+
             if(bitmap == null){
                 bitmap = Bitmap.createBitmap(content.getWidth(), content.getHeight(), Bitmap.Config.RGB_565);
             }
             Canvas canvas = new Canvas(bitmap);
             try{
+                //asking permissions for creating directory
+                if(shouldAskPermissions()) {
+                    askPermissions();
+                }
+
                 FileOutputStream fileOutputStream = new FileOutputStream(currentPhotoPath);
 
                 view.draw(canvas);
+
+                String url = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, imgName, null);
+
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
                 fileOutputStream.flush();
                 fileOutputStream.close();
@@ -240,4 +288,21 @@ public class WriteNumberActivity extends AppCompatActivity{
         }
     }
     //endregion
+
+
+    //check version
+    protected boolean shouldAskPermissions() {
+        return (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP_MR1);
+    }
+
+    @TargetApi(23)
+    protected void askPermissions() {
+        String[] permissions = {
+                "android.permission.READ_EXTERNAL_STORAGE",
+                "android.permission.WRITE_EXTERNAL_STORAGE",
+                "android.permission.CALL_PHONE"
+        };
+        int requestCode = 200;
+        requestPermissions(permissions, requestCode);
+    }
 }
