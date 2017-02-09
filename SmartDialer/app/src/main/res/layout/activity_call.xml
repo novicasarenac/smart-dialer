@@ -22,13 +22,12 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:textSize="35dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="180dp"
         android:id="@+id/textView"
-        android:textColor="@android:color/secondary_text_light"/>
+        android:textColor="@android:color/secondary_text_light" />
 
     <Button
         android:layout_width="110dp"

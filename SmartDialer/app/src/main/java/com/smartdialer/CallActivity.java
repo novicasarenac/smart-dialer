@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import org.opencv.android.OpenCVLoader;
@@ -30,8 +31,11 @@ import org.opencv.imgproc.Imgproc;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import org.opencv.ml.*;
 import org.opencv.utils.Converters;
@@ -47,6 +51,7 @@ public class CallActivity extends AppCompatActivity {
     private int imgY = 35;
 
     private String cNumber = "";
+    private EditText editText;
 
     private ArrayList<Integer> images = new ArrayList<Integer>();
 
@@ -74,9 +79,10 @@ public class CallActivity extends AppCompatActivity {
 
         addImages();
 
-
-
         processImage();
+
+        editText = (EditText)findViewById(R.id.textView);
+        editText.setText(cNumber);
     }
 
     private void setPic(){
@@ -107,7 +113,17 @@ public class CallActivity extends AppCompatActivity {
 
     public void callNumber(View view){
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:00381642364832"));
+        cNumber = editText.getText().toString();
+        String cNumberToCall = cNumber.replaceAll("/", "").replaceAll("-", "").replaceAll("\\+", "00");
+
+        /*try {
+            Integer.parseInt(cNumberToCall);
+        }catch (Exception e){
+            e.printStackTrace();
+            return;
+        }*/
+
+        callIntent.setData(Uri.parse("tel:" + cNumberToCall));
 
         if(ActivityCompat.checkSelfPermission(CallActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             return;
@@ -258,7 +274,8 @@ public class CallActivity extends AppCompatActivity {
         List<MatOfPoint> contoursCurrent = new ArrayList<MatOfPoint>();
         Imgproc.findContours(threshCurrent, contoursCurrent, new Mat(), Imgproc.RETR_EXTERNAL, Imgproc.CHAIN_APPROX_SIMPLE);
 
-        ArrayMap<Integer, String> chars = new ArrayMap<Integer, String>();
+        //ArrayMap<Integer, String> chars = new ArrayMap<Integer, String>();
+        TreeMap<Integer, String> chars = new TreeMap<Integer, String>();
         for(MatOfPoint cont: contoursCurrent){
             MatOfPoint num = new MatOfPoint();
             cont.copyTo(num);
@@ -268,7 +285,7 @@ public class CallActivity extends AppCompatActivity {
 
             if(rect.width > 8 && rect.height > 8){
                 if((rect.width / rect.height) > 1.2){
-                    chars.put(rect.x, "12");
+                    chars.put(rect.x, "[12]");
                 }
 
                 else {
@@ -289,17 +306,18 @@ public class CallActivity extends AppCompatActivity {
             }
         }
 
-        for(Map.Entry<Integer, String> entry : chars.entrySet()){
-            if(entry.getValue() == "10")
+        for(Integer key : chars.keySet()){
+            if(chars.get(key).equals("[10]"))
                 cNumber += "+";
-            else if(entry.getValue() == "11")
+            else if(chars.get(key).equals("[11]"))
                 cNumber += "/";
-            else if(entry.getValue() == "12")
+            else if(chars.get(key).equals("[12]"))
                 cNumber += "-";
             else
-                cNumber += entry.getValue();
+                cNumber += chars.get(key);
         }
 
+        cNumber = cNumber.replaceAll("\\[", "").replaceAll("\\]", "");
         String sa = cNumber;
     }
 
