@@ -205,8 +205,10 @@ public class CallActivity extends AppCompatActivity {
                     Mat resized = new Mat();
                     resizeImg(forResize, resized);
 
-                    Mat r = resized.reshape(0, imgX * imgY);
-                    r.convertTo(trainArray.row(i), CV_32F);
+                    Mat resized_temp = resized.reshape(0, imgX * imgY);
+                    Mat transposed_resized = new Mat();
+                    Core.transpose(resized_temp, transposed_resized);
+                    transposed_resized.convertTo(trainArray.row(i), CV_32F);
                     //resized.reshape(-1, imgX * imgY).convertTo(trainArray.row(i), CV_32FC1);
                     //train_array[i] = resized.reshape(-1, img_x*img_y).astype(np.float32)
 
@@ -279,9 +281,9 @@ public class CallActivity extends AppCompatActivity {
                     r.convertTo(resizedForKnn, CV_32F);
 
                     Mat result = new Mat();
-                    Mat rrrr = new Mat();
-                    Core.transpose(resizedForKnn, rrrr);
-                    knn.findNearest(rrrr, 4, result);
+                    Mat transposed = new Mat();
+                    Core.transpose(resizedForKnn, transposed);
+                    knn.findNearest(transposed, 4, result);
                     chars.put(rect.x, result.dump());
                 }
             }
