@@ -208,7 +208,7 @@ public class CallActivity extends AppCompatActivity {
         List<Integer> numLabels = new ArrayList<Integer>();
 
         for(int j = 0; j < 12; j++){
-            for(int k = 0; k < 40; k++){
+            for(int k = 0; k < (images.size() * 20) / 12; k++){
                 numLabels.add(j);
             }
         }
@@ -343,7 +343,7 @@ public class CallActivity extends AppCompatActivity {
         //labels for knn training
         List<Integer> numLabels = new ArrayList<Integer>();
         for(int j = 0; j < 12; j++){
-            for(int k = 0; k < 40; k++){
+            for(int k = 0; k < (images.size() * 20) / 12; k++){
                 numLabels.add(j);
             }
         }
@@ -432,27 +432,87 @@ public class CallActivity extends AppCompatActivity {
     public void addImages(){
         images.add(R.drawable.zero_training);
         images.add(R.drawable.zero_training2);
+        images.add(R.drawable.zero_training3);
+        images.add(R.drawable.zero_training4);
+        images.add(R.drawable.zero_training5);
+        images.add(R.drawable.zero_training6);
+        images.add(R.drawable.zero_training7);
         images.add(R.drawable.one_training);
         images.add(R.drawable.one_training2);
+        images.add(R.drawable.one_training3);
+        images.add(R.drawable.one_training4);
+        images.add(R.drawable.one_training5);
+        images.add(R.drawable.one_training6);
+        images.add(R.drawable.one_training7);
         images.add(R.drawable.two_training);
         images.add(R.drawable.two_training2);
+        images.add(R.drawable.two_training3);
+        images.add(R.drawable.two_training4);
+        images.add(R.drawable.two_training5);
+        images.add(R.drawable.two_training6);
+        images.add(R.drawable.two_training7);
         images.add(R.drawable.three_training);
         images.add(R.drawable.three_training2);
+        images.add(R.drawable.three_training3);
+        images.add(R.drawable.three_training4);
+        images.add(R.drawable.three_training5);
+        images.add(R.drawable.three_training6);
+        images.add(R.drawable.three_training7);
         images.add(R.drawable.four_training);
         images.add(R.drawable.four_training2);
+        images.add(R.drawable.four_training3);
+        images.add(R.drawable.four_training4);
+        images.add(R.drawable.four_training5);
+        images.add(R.drawable.four_training6);
+        images.add(R.drawable.four_training7);
         images.add(R.drawable.five_training);
         images.add(R.drawable.five_training2);
+        images.add(R.drawable.five_training3);
+        images.add(R.drawable.five_training4);
+        images.add(R.drawable.five_training5);
+        images.add(R.drawable.five_training6);
+        images.add(R.drawable.five_training7);
         images.add(R.drawable.six_training);
         images.add(R.drawable.six_training2);
+        images.add(R.drawable.six_training3);
+        images.add(R.drawable.six_training4);
+        images.add(R.drawable.six_training5);
+        images.add(R.drawable.six_training6);
+        images.add(R.drawable.six_training7);
         images.add(R.drawable.seven_training);
         images.add(R.drawable.seven_training2);
+        images.add(R.drawable.seven_training3);
+        images.add(R.drawable.seven_training4);
+        images.add(R.drawable.seven_training5);
+        images.add(R.drawable.seven_training6);
+        images.add(R.drawable.seven_training7);
         images.add(R.drawable.eight_training);
         images.add(R.drawable.eight_training2);
+        images.add(R.drawable.eight_training3);
+        images.add(R.drawable.eight_training4);
+        images.add(R.drawable.eight_training5);
+        images.add(R.drawable.eight_training6);
+        images.add(R.drawable.eight_training7);
         images.add(R.drawable.nine_training);
         images.add(R.drawable.nine_training2);
+        images.add(R.drawable.nine_training3);
+        images.add(R.drawable.nine_training4);
+        images.add(R.drawable.nine_training5);
+        images.add(R.drawable.nine_training6);
+        images.add(R.drawable.nine_training7);
         images.add(R.drawable.plus_training);
         images.add(R.drawable.plus_training2);
+        images.add(R.drawable.plus_training3);
+        images.add(R.drawable.plus_training4);
+        images.add(R.drawable.plus_training5);
+        images.add(R.drawable.plus_training6);
+        images.add(R.drawable.plus_training7);
         images.add(R.drawable.slash_training);
         images.add(R.drawable.slash_training2);
+        images.add(R.drawable.slash_training3);
+        images.add(R.drawable.slash_training4);
+        images.add(R.drawable.slash_training5);
+        images.add(R.drawable.slash_training6);
+        images.add(R.drawable.slash_training7);
     }
 }
