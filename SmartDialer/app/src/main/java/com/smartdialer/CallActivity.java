@@ -394,7 +394,7 @@ public class CallActivity extends AppCompatActivity {
             Mat temp = new Mat(forResize.rows(), forResize.cols(), CV_8U, s);
             Core.subtract(temp, forResize, forResize);
 
-            if((rect.width > 10 && rect.height > 10) || rect.width/rect.height > 3){
+            if((rect.width > 15 && rect.height > 15) || rect.width/rect.height > 3){
                 if((rect.width / rect.height) > 1.2){
                     chars.put(rect.x, "[12]");
                 }else{
