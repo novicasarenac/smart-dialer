@@ -125,6 +125,7 @@ public class WriteNumberActivity extends AppCompatActivity{
         phoneNumberView.save(content);
         Intent callActivityIntent = new Intent(this, CallActivity.class);
         callActivityIntent.putExtra("imagePath", currentPhotoPath);
+        callActivityIntent.putExtra("mode", AppMode.DRAWING);
         startActivity(callActivityIntent);
     }
 

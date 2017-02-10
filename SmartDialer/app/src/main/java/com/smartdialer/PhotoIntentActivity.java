@@ -125,6 +125,7 @@ public class PhotoIntentActivity extends AppCompatActivity {
                 galleryAddPic();
                 Intent callActivityIntent = new Intent(this, CallActivity.class);
                 callActivityIntent.putExtra("imagePath", currentPhotoPath);
+                callActivityIntent.putExtra("mode", AppMode.PHOTO);
                 startActivity(callActivityIntent);
             }
         }
