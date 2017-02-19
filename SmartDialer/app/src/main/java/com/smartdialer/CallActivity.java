@@ -437,6 +437,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.zero_training5);
         images.add(R.drawable.zero_training6);
         images.add(R.drawable.zero_training7);
+        images.add(R.drawable.zero_training8);
+        images.add(R.drawable.zero_training9);
+        images.add(R.drawable.zero_training10);
+        images.add(R.drawable.zero_training11);
+        images.add(R.drawable.zero_training12);
         images.add(R.drawable.one_training);
         images.add(R.drawable.one_training2);
         images.add(R.drawable.one_training3);
@@ -444,6 +449,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.one_training5);
         images.add(R.drawable.one_training6);
         images.add(R.drawable.one_training7);
+        images.add(R.drawable.one_training8);
+        images.add(R.drawable.one_training9);
+        images.add(R.drawable.one_training10);
+        images.add(R.drawable.one_training11);
+        images.add(R.drawable.one_training12);
         images.add(R.drawable.two_training);
         images.add(R.drawable.two_training2);
         images.add(R.drawable.two_training3);
@@ -451,6 +461,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.two_training5);
         images.add(R.drawable.two_training6);
         images.add(R.drawable.two_training7);
+        images.add(R.drawable.two_training8);
+        images.add(R.drawable.two_training8);
+        images.add(R.drawable.two_training10);
+        images.add(R.drawable.two_training11);
+        images.add(R.drawable.two_training12);
         images.add(R.drawable.three_training);
         images.add(R.drawable.three_training2);
         images.add(R.drawable.three_training3);
@@ -458,6 +473,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.three_training5);
         images.add(R.drawable.three_training6);
         images.add(R.drawable.three_training7);
+        images.add(R.drawable.three_training8);
+        images.add(R.drawable.three_training9);
+        images.add(R.drawable.three_training10);
+        images.add(R.drawable.three_training11);
+        images.add(R.drawable.three_training12);
         images.add(R.drawable.four_training);
         images.add(R.drawable.four_training2);
         images.add(R.drawable.four_training3);
@@ -465,6 +485,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.four_training5);
         images.add(R.drawable.four_training6);
         images.add(R.drawable.four_training7);
+        images.add(R.drawable.four_training8);
+        images.add(R.drawable.four_training9);
+        images.add(R.drawable.four_training10);
+        images.add(R.drawable.four_training11);
+        images.add(R.drawable.four_training12);
         images.add(R.drawable.five_training);
         images.add(R.drawable.five_training2);
         images.add(R.drawable.five_training3);
@@ -472,6 +497,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.five_training5);
         images.add(R.drawable.five_training6);
         images.add(R.drawable.five_training7);
+        images.add(R.drawable.five_training8);
+        images.add(R.drawable.five_training9);
+        images.add(R.drawable.five_training10);
+        images.add(R.drawable.five_training11);
+        images.add(R.drawable.five_training12);
         images.add(R.drawable.six_training);
         images.add(R.drawable.six_training2);
         images.add(R.drawable.six_training3);
@@ -479,6 +509,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.six_training5);
         images.add(R.drawable.six_training6);
         images.add(R.drawable.six_training7);
+        images.add(R.drawable.six_training8);
+        images.add(R.drawable.six_training9);
+        images.add(R.drawable.six_training10);
+        images.add(R.drawable.six_training11);
+        images.add(R.drawable.six_training12);
         images.add(R.drawable.seven_training);
         images.add(R.drawable.seven_training2);
         images.add(R.drawable.seven_training3);
@@ -486,6 +521,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.seven_training5);
         images.add(R.drawable.seven_training6);
         images.add(R.drawable.seven_training7);
+        images.add(R.drawable.seven_training8);
+        images.add(R.drawable.seven_training9);
+        images.add(R.drawable.seven_training10);
+        images.add(R.drawable.seven_training11);
+        images.add(R.drawable.seven_training12);
         images.add(R.drawable.eight_training);
         images.add(R.drawable.eight_training2);
         images.add(R.drawable.eight_training3);
@@ -493,6 +533,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.eight_training5);
         images.add(R.drawable.eight_training6);
         images.add(R.drawable.eight_training7);
+        images.add(R.drawable.eight_training8);
+        images.add(R.drawable.eight_training9);
+        images.add(R.drawable.eight_training10);
+        images.add(R.drawable.eight_training11);
+        images.add(R.drawable.eight_training12);
         images.add(R.drawable.nine_training);
         images.add(R.drawable.nine_training2);
         images.add(R.drawable.nine_training3);
@@ -500,6 +545,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.nine_training5);
         images.add(R.drawable.nine_training6);
         images.add(R.drawable.nine_training7);
+        images.add(R.drawable.nine_training8);
+        images.add(R.drawable.nine_training9);
+        images.add(R.drawable.nine_training10);
+        images.add(R.drawable.nine_training11);
+        images.add(R.drawable.nine_training12);
         images.add(R.drawable.plus_training);
         images.add(R.drawable.plus_training2);
         images.add(R.drawable.plus_training3);
@@ -507,6 +557,11 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.plus_training5);
         images.add(R.drawable.plus_training6);
         images.add(R.drawable.plus_training7);
+        images.add(R.drawable.plus_training8);
+        images.add(R.drawable.plus_training9);
+        images.add(R.drawable.plus_training10);
+        images.add(R.drawable.plus_training11);
+        images.add(R.drawable.plus_training12);
         images.add(R.drawable.slash_training);
         images.add(R.drawable.slash_training2);
         images.add(R.drawable.slash_training3);
@@ -514,5 +569,10 @@ public class CallActivity extends AppCompatActivity {
         images.add(R.drawable.slash_training5);
         images.add(R.drawable.slash_training6);
         images.add(R.drawable.slash_training7);
+        images.add(R.drawable.slash_training8);
+        images.add(R.drawable.slash_training9);
+        images.add(R.drawable.slash_training10);
+        images.add(R.drawable.slash_training11);
+        images.add(R.drawable.slash_training12);
     }
 }
